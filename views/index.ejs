@@ -1,0 +1,35 @@
+
+ <%- include('include/header') %>
+
+ <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+            <a href="/add-user" class="border-shadow">
+                <span class="text-gradient">Add Your Experience   <i class="fas fa-plus"></i></span>
+            </a>
+        </div>
+
+        <!-- form handling -->
+        <form action="/" method="POST">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Company</th>
+                        <th>Interview type</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%- include('include/show') %>
+                    
+                    
+                </tbody>
+            </table>
+        </form>
+        <!-- <%=users %> -->
+    </div>
+</main>
+ <%- include('include/footer') %>
+ 
