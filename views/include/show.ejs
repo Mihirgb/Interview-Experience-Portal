@@ -1,19 +1,20 @@
 <% for(var i = 0; i < users.length; i++) { %>
-<tr>
+<tr href="/update-user?id=<%= users[i]._id%>">
+    <!-- tr ke andar id not important -->
 <td><%= i + 1 %></td>
-<td><%= users[i].name %></td>
+<td href="/update-user?id=<%= users[i]._id%>">
+    <a href="/profile?id=<%= users[i]._id%>" style="text-decoration: none">
+    <%= users[i].name %></a>
+</td>
+<!-- <a href="/update-user?id=<%= users[i]._id%>"><%= users[i].name %></a> -->
 <td><%= users[i].company %></td>
 <td><%= users[i].inttype %></td>
 
 <td>
     <a href="/update-user?id=<%= users[i]._id%>" class="btn border-shadow update">
-        <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
+        <span class="text-gradient"><i class="fas fa-arrow-up"></i></span>
     </a>
 
-
-    <a class="btn border-shadow delete" data-id=<%= users[i]._id%>>
-        <span class="text-gradient"><i class="fas fa-times"></i></span>
-    </a>
 </td>
 
 </tr>

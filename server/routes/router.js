@@ -1,33 +1,28 @@
 const express = require('express');
 const route = express.Router()
-
 const services = require('../services/render');
 const controller = require('../controller/controller');
 
-/**
- *  @description Root Route
- *  @method GET /
- */
-route.get('/', services.homeRoutes);
+// route.get('/', services.homeRoutes);
+route.get('/', services.main);
+route.get('/homeRoutes', services.homeRoutes);
+route.get('/about',services.about);
+route.get('/features',services.features);
+route.get('/profile',services.profile);
+route.get('/loginapp',services.loginapp);
+route.get('/register',services.register);
+route.get('/login',services.login);
+route.get('/username',services.username);
+route.get('/password',services.password);
 
-/**
- *  @description add users
- *  @method GET /add-user
- */
+
 route.get('/add-user', services.add_user)
-
-/**
- *  @description for update user
- *  @method GET /update-user
- */
 route.get('/update-user', services.update_user)
-
-
+route.get('/codeditor',services.codeditor)
+route.get('/codesite',services.codesite)
 // API
 route.post('/api/users', controller.create);
 route.get('/api/users', controller.find);
 route.put('/api/users/:id', controller.update);
-route.delete('/api/users/:id', controller.delete);
-
 
 module.exports = route

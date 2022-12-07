@@ -1,57 +1,80 @@
-<%- include('include/header') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="\css\updatestyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
+    <title>Interview Experience System</title>
+</head>
+<body>
+    
 
 <main id="site-main">
     <div class="container">
         <div class="box-nav d-flex justify-between">
             <div class="filter">
-                <a href="/"><i class="fas fa-angle-double-left"></i> All Users</a>
+                <a href="/homeRoutes"><i class="fas fa-angle-double-left"></i> Back</a>
             </div>
          </div>
-         <div class="form-title text-center">
-             <h2 class="text-dark">The Experience</h2>
-             <span class="text-light"> Read on to find 'Interview Experiences' of all product and service-based companies</span>
-         </div>
+         
 
          <!-- form handling -->
 <form   method="POST" id="update_user">
     <div class="new_user"  >
+        <div class="form-title text-center">
+            <h1 class="text-dark"><%= user.company%> <%= user.inttype %> Experience</h1>
+            <!-- <span class="text-light"> Read on to find 'Interview Experiences' of all product and service-based companies</span> -->
+        </div>
+
+
+        
         <div class="form-group">
             <label for="name" class="text-light">Candidate Name</label>
             <input type="hidden" name="id" value="<%= user._id %>">
-            <input type="text" name="name" value="<%= user.name %>" placeholder="">
+            <!-- <input type="text" name="name" value="<%= user.name %>" placeholder=""> -->
+            <p><%= user.name %></p>
         </div>
     
         <div class="form-group">
             <label for="inttype" class="text-light">Interview type:</label>
-            <input type="text" name="inttype" value="<%= user.inttype %>" placeholder="">
+            <!-- <input type="text" name="inttype" value="<%= user.inttype %>" placeholder=""> -->
+            <p><%= user.inttype %></p>
         </div>
 
         <div class="form-group">
             <label for="name" class="text-light">Company Name</label>
-            <input type="text" name="company" value="<%= user.company%>" placeholder="">
+            <!-- <input type="text" name="company" value="<%= user.company%>" placeholder=""> -->
+            <p><%= user.company%></p>
         </div>
         <div class="form-group">
             <label for="name" class="text-light">About Company</label>
-            <input type="text" name="experience" value="<%= user.experience%>" placeholder="">
+            <!-- <input type="text" name="experience" value="<%= user.experience%>" placeholder=""> -->
+            <p><%= user.experience%></p>
         </div>
 
         <div class="form-group">
             <label for="requirements" class="text-light">Company Requirements:</label>
-            <input type="text" name="requirements" value="<%= user.requirements%>" placeholder="">
+            <!-- <input type="text" name="requirements" value="<%= user.requirements%>" placeholder=""> -->
+            <p><%= user.requirements%></p>
         </div>
         <div class="form-group">
             <label for="name" class="text-light">Interview Process:(How many rounds the company conducted?)</label>
-            <input type="text" name="process" value="<%= user.process%>" placeholder="">
+            <!-- <input type="text" name="process" value="<%= user.process%>" placeholder=""> -->
+            <p><%= user.process%></p>
         </div>
         <div class="form-group">
             <label for="name" class="text-light">Questions asked:</label>
-            <input type="text" name="questions" value="<%= user.questions%>" placeholder="">
+            <!-- <input type="text" name="questions" value="<%= user.questions%>" placeholder=""> -->
+            <p ><%= user.questions%></p>
         </div>
 
-
+<!-- 
         <div class="form-group">
             <button type="submit" class="btn text-dark update">Save</button>
-        </div>
+        </div> -->
 
     </div>
 </form>

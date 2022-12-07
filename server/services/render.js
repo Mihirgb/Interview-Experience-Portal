@@ -1,24 +1,68 @@
 const axios = require('axios');
 
 
+// exports.homeRoutes = (req, res) => {
+//     axios.get('http://localhost:3000/api/users')
+//         .then(function(response){
+//             res.render('index', { users :response.data });
+//         })
+//         .catch(err =>{
+//             res.send(err);
+//         })
+// }
+
 exports.homeRoutes = (req, res) => {
-    // Make a get request to /api/users
     axios.get('http://localhost:3000/api/users')
         .then(function(response){
-            // console.log(response.data)
-            res.render('index', { users :response.data });
+            res.render('newindex', { users :response.data });
         })
         .catch(err =>{
             res.send(err);
         })
-// res.render('index');
-    
+}
+exports.main = (req, res) =>{
+    res.render('site');
 }
 
 exports.add_user = (req, res) =>{
     res.render('add_user');
 }
-
+exports.codeditor =(req,res)=>{
+    res.render('codeditor');
+}
+exports.codesite =(req,res)=>{
+    res.render('codesite');
+}
+exports.profile =(req,res)=>{
+    axios.get('http://localhost:3000/api/users', { params : { id : req.query.id }})
+    .then(function(userdata){
+        res.render("profile", { user : userdata.data})
+    })
+    .catch(err =>{
+        res.send(err);
+    })
+}
+exports.about =(req,res)=>{
+    res.render('about');
+}
+exports.features =(req,res)=>{
+    res.render('features');
+}
+exports.loginapp =(req,res)=>{
+    res.render('loginapp');
+}
+exports.register =(req,res)=>{
+    res.render('register');
+}
+exports.login =(req,res)=>{
+    res.render('login');
+}
+exports.username =(req,res)=>{
+    res.render('username');
+}
+exports.password =(req,res)=>{
+    res.render('password');
+}
 exports.update_user = (req, res) =>{
     axios.get('http://localhost:3000/api/users', { params : { id : req.query.id }})
         .then(function(userdata){
@@ -28,6 +72,5 @@ exports.update_user = (req, res) =>{
             res.send(err);
         })
 
-    // res.render('update_user');
 
 }

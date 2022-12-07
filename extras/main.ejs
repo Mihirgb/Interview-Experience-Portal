@@ -1,0 +1,151 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Interview Portal</title>
+    <style>
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.banner-area{
+    background-image: url('https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYzNzU5MjE4OA&ixlib=rb-1.2.1&q=85');
+    background-position: center center;
+    background-size:cover ;
+    /* -webkit-background-size:cover ; */
+    height: 100vh;
+    width: auto;
+    margin: auto;
+}
+.menu{
+    float: right;
+    list-style: none;
+    margin-top:30px;
+}
+.menu ul li{
+    display: inline-block;
+}
+.menu ul li a{
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 20px;
+    font-family: 'poppins' ,sans-serif;
+    font-size: 16px;
+}
+.menu ul li a:hover{
+    color: rgb(199, 139, 255);
+}
+/* .logo{
+    height: 20%;
+    float: left;
+    color: azure;
+    list-style: none;
+    
+} */
+.banner-text{
+    position: absolute;
+    width: 600px;
+    height: 300px;
+    margin: 12% 30%;
+    text-align: center;
+}
+.banner-text h1{
+    text-align: center;
+    color:rgb(233, 185, 255);
+    
+    text-transform: uppercase;
+    font-size: 60px;
+    font-family: 'poppins' , sans-serif;
+}
+.banner-text p{
+    color: #fff;
+    font-size: 18px;
+}
+.banner-text a{
+    border: 1px solid #fff;
+    padding: 10px 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-top: 20px;
+    display: inline-block;
+    color: #fff;
+}
+.banner-text a:hover{
+    background-color: white;
+    color: rgba(68, 25, 109, 0.623);
+    font-weight: bold;
+}
+.vid-parent {
+  position: relative;
+}
+video {
+  width: 100%;
+  height: 100%;
+}
+.vid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #225470;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.vid-content {
+  color: #fff;
+  position: absolute;
+  top: 35%;
+  left: 35%;
+  z-index: 2;
+  text-align: center;
+}
+.vid-content {
+    top: 12%;
+    left: 60%;
+  }
+
+    </style>
+</head>
+
+<body>
+    <div class="banner-area">
+        <!-- <div class="vid-parent">
+            <video playsinline autoplay muted loop>
+              <source src="video/banvid.mp4" />
+            </video>
+            <div class="vid-overlay"></div>
+          </div> -->
+    <header>
+           <div class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="/homeRoutes">Interview Experiences</a></li>
+                    <li><a href="">Resume-Builder</a></li>
+                    <li><a href="codeditor">Code Editor</a></li>
+                    <li><a href="about">About</a></li>
+                </ul>
+            </div>
+
+        </header>
+        <div class="banner-text">
+            <h1>Interview Preparation Portal</h1>
+            <p>A Javascipt Application to help you ace your next interview.</p>
+            <a href="features">Features</a>
+            <a href="#">Watch More</a>
+        </div>
+
+
+    </div>
+</body>
+
+
+
+
+ <!-- {{!-- {{>navbar}} --}} -->

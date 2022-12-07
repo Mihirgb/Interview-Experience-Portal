@@ -1,0 +1,137 @@
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="\css\newstyle.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+ 
+     <title>Interview Experience System</title>
+ </head>
+ <body>
+     <header id="header">
+ 
+         <nav>
+ 
+             <div class="container">
+                 <div class="text-center">
+                     <a href="/" class="nav-brand text-dark" style="text-decoration:none ">Interview Experience Portal</a>
+                 </div>
+             </div>
+         </nav>
+ 
+     </header>
+
+ <main id="site-main">
+    <div class="container">
+        <div class="box-nav d-flex justify-between">
+            <a href="/add-user" style="text-decoration: none" class="border-shadow">
+                <span class="text-gradient">Add Your Experience <i class="fas fa-plus"></i></span>
+            </a>
+        </div>
+        
+<!-- <div class="row"> -->
+
+
+
+        <!-- form handling -->
+        <form action="/" > 
+            <!-- //method="POST" tha yaha pe form ke andar -->
+            <!-- <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card rounded-0 border-0 text-center py-5 px-3">
+                    <div>
+                        <img src="./img/services-img/website.webp">
+                    </div>
+                    <a class="text-uppercase mt-4 mb-3">Chatbot</a>
+                    <p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card rounded-0 border-0 text-center py-5 px-3">
+                    <div>
+                        <img src="./img/services-img/website.webp">
+                    </div>
+                    <a class="text-uppercase mt-4 mb-3">Chatbot</a>
+                    <p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card rounded-0 border-0 text-center py-5 px-3">
+                    <div>
+                        <img src="./img/services-img/website.webp">
+                    </div>
+                    <a class="text-uppercase mt-4 mb-3">Chatbot</a>
+                    <p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card rounded-0 border-0 text-center py-5 px-3">
+                    <div>
+                        <img src="./img/services-img/website.webp">
+                    </div>
+                    <a class="text-uppercase mt-4 mb-3">Chatbot</a>
+                    <p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card rounded-0 border-0 text-center py-5 px-3">
+                    <div>
+                        <img src="./img/services-img/website.webp">
+                    </div>
+                    <a class="text-uppercase mt-4 mb-3">Chatbot</a>
+                    <p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
+                </div>
+            </div><div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card rounded-0 border-0 text-center py-5 px-3">
+                    <div>
+                        <img src="./img/services-img/website.webp">
+                    </div>
+                    <a class="text-uppercase mt-4 mb-3">Chatbot</a>
+                    <p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
+                </div>
+            </div><div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card rounded-0 border-0 text-center py-5 px-3">
+                    <div>
+                        <img src="./img/services-img/website.webp">
+                    </div>
+                    <a class="text-uppercase mt-4 mb-3">Chatbot</a>
+                    <p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
+                </div>
+            </div><div class="col-lg-3 col-sm-6 mb-4">
+                <div class="card rounded-0 border-0 text-center py-5 px-3">
+                    <div>
+                        <img src="./img/services-img/website.webp">
+                    </div>
+                    <a class="text-uppercase mt-4 mb-3">Chatbot</a>
+                    <p>Creeping for female light years that lesser can't evening heaven isn't bearing tree</p>
+                </div>
+            </div> -->
+
+
+        <!-- </div> -->
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Company</th>
+                        <th>Interview type</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%- include('include/show') %>
+                    
+                    
+                </tbody>
+            </table>
+        </form>
+        <!-- <%=users %> -->
+    </div>
+</main>
+ <%- include('include/footer') %>
+ 
