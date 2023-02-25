@@ -29,67 +29,67 @@ app.use(expressValidator());
 app.use('/img', express.static(path.resolve(__dirname, "assets/img")))
 app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
 
-app.post('/api/register', async (req, res) => {
-	const { name, username, password: plainTextPassword } = req.body
+// app.post('/api/register', async (req, res) => {
+// 	const { name, username, password: plainTextPassword } = req.body
 
-	if (!username || typeof username !== 'string') {
-		return res.json({ status: 'error', error: 'Invalid username' })
-	}
+// 	if (!username || typeof username !== 'string') {
+// 		return res.json({ status: 'error', error: 'Invalid username' })
+// 	}
 
-	if (!plainTextPassword || typeof plainTextPassword !== 'string') {
-		return res.json({ status: 'error', error: 'Invalid password' })
-	}
+// 	if (!plainTextPassword || typeof plainTextPassword !== 'string') {
+// 		return res.json({ status: 'error', error: 'Invalid password' })
+// 	}
 
-	if (plainTextPassword.length < 5) {
-		return res.json({
-			status: 'error',
-			error: 'Password too small. Should be atleast 6 characters'
-		})
-	}
+// 	if (plainTextPassword.length < 5) {
+// 		return res.json({
+// 			status: 'error',
+// 			error: 'Password too small. Should be atleast 6 characters'
+// 		})
+// 	}
 
-	const password = await bcrypt.hash(plainTextPassword, 10)
+// 	const password = await bcrypt.hash(plainTextPassword, 10)
 
-	try {
-		const response = await User.create({
-            name,
-			username,
-			password
-		})
-		console.log('User created successfully: ', response)
-	} catch (error) {
-		if (error.code === 11000) {
-			// duplicate key
-			return res.json({ status: 'error', error: 'Username already in use' })
-		}
-		throw error
-	}
+// 	try {
+// 		const response = await User.create({
+//             name,
+// 			username,
+// 			password
+// 		})
+// 		console.log('User created successfully: ', response)
+// 	} catch (error) {
+// 		if (error.code === 11000) {
+// 			// duplicate key
+// 			return res.json({ status: 'error', error: 'Username already in use' })
+// 		}
+// 		throw error
+// 	}
 
-	res.json({ status: 'ok' })
-})
-app.post('/api/login', async (req, res) => {
-	const { username, password } = req.body
-	const user = await User.findOne({ username }).lean()
+// 	res.json({ status: 'ok' })
+// })
+// app.post('/api/login', async (req, res) => {
+// 	const { username, password } = req.body
+// 	const user = await User.findOne({ username }).lean()
 
-	if (!user) {
-		return res.json({ status: 'error', error: 'Invalid username/password' })
-	}
+// 	if (!user) {
+// 		return res.json({ status: 'error', error: 'Invalid username/password' })
+// 	}
 
-	if (await bcrypt.compare(password, user.password)) {
-		// the username, password combination is successful
+// 	if (await bcrypt.compare(password, user.password)) {
+// 		// the username, password combination is successful
 
-		const token = jwt.sign(
-			{
-				id: user._id,
-				username: user.username
-			},
-			JWT_SECRET
-		)
+// 		const token = jwt.sign(
+// 			{
+// 				id: user._id,
+// 				username: user.username
+// 			},
+// 			JWT_SECRET
+// 		)
 
-		return res.json({ status: 'ok', data: token })
-	}
+// 		return res.json({ status: 'ok', data: token })
+// 	}
 
-	res.json({ status: 'error', error: 'Invalid username/password' })
-})
+// 	res.json({ status: 'error', error: 'Invalid username/password' })
+// })
 
 //initializiig routes
 // const users=require('./server/routes/users')

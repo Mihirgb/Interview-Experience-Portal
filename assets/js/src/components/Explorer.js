@@ -11,7 +11,7 @@ export default {
   template: `
     <section id="file-explorer" class="text-white py-3">
       <small class="px-2">Add Your Files Here</small>
-      <i class="las la-file-medical float-end me-2" @click="newFile"></i>
+      <i class="fas fa-plus" @click="newFile"></i>
 
       <hr class="mb-0"/>
 
@@ -26,7 +26,7 @@ export default {
         <li class="list-group-item" v-show="flag">
           <small>
             <div class="input-group mb-3">
-              <span class="input-group-text p-0 border-0 bg-transparent"><i class="las la-file text-primary"></i></span>
+              <span class="input-group-text p-0 border-0 bg-transparent"><i class="fas fa-plus"></i></span>
               <input maxlength="100" type="text" class="form-control py-0 border-0 bg-transparent" ref="filename" @blur="addFile"
               @keyup.enter.prevent="addFile"
               v-model="filename">

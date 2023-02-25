@@ -14,8 +14,19 @@ route.get('/register',services.register);
 route.get('/login',services.login);
 route.get('/username',services.username);
 route.get('/password',services.password);
+route.get('/resources',services.resources);
+route.get('/google',services.google);
+route.get('/amazon',services.amazon);
+route.get('/wallmart',services.wallmart);
+route.get('/microsoft',services.microsoft);
+route.get('/rtips',services.rtips);
+route.get('/forums',services.forums);
+route.get('/detail',services.detail);
+route.get('/posts',services.posts);
 
 
+
+route.get('/resume',services.resume)
 route.get('/add-user', services.add_user)
 route.get('/update-user', services.update_user)
 route.get('/codeditor',services.codeditor)

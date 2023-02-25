@@ -33,6 +33,7 @@ var app = new Vue({
     </div>
   `,
   created() {
+    
     this.socket.on("connect", () => {
       this.connected = true;
       console.log(this.socket.id);

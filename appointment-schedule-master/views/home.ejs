@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/normalize.css" />
+    <link rel="stylesheet" href="/main/styles.css" />
+    <link rel="stylesheet" href="/main/sitestyle.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
+    <title><%= pageTitle %></title>
+  </head>
+  <body>
+    <header><%- include("../views/includes/nav.ejs") %></header>
+    <main>
+      <!-- <h2><%= msg %></h2> -->
+      <!-- <% if (isAuthenticated) { %>
+      <h2>You are logged in!</h2>
+      <% } %> -->
+    </main>
+    <footer></footer>
+    <section id="home" class="banner_wrapper">
+      <div class="container">
+          <div class="row">
+              <div class="col-lg-7 order-lg-1 order-2 banner-content">
+                  <h1 class=""><%= msg %></h1>
+                  <!-- <h5 ></h5> -->
+                  <p>Connect with experienced people in the industry by scheduling appointments.</p>
+                  <% if (isAuthenticated) { %>
+                    <h2>You are logged in!</h2>
+                    <% } %>
+
+                  <h5 class="text-uppercase"></h5>
+                  <!-- <div class="mt-5">
+                      <a class="main-btn primary-btn" href="#about">See More</a>
+                      <a class="main-btn secondary-btn ms-4" href="#features">Features</a>
+                  </div> -->
+              </div>
+              <div class="col-lg-5 order-lg-2 order-1">
+                  <div class="top-right-img">
+                      <!-- <img src="img/home-right.webp" class="img-fluid"> -->
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  </body>
+</html>

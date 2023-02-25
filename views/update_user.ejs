@@ -7,6 +7,9 @@
     <link rel="stylesheet" href="\css\updatestyle.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <title>Interview Experience System</title>
 </head>
 <body>
@@ -24,49 +27,49 @@
          <!-- form handling -->
 <form   method="POST" id="update_user">
     <div class="new_user"  >
-        <div class="form-title text-center">
-            <h1 class="text-dark"><%= user.company%> <%= user.inttype %> Experience</h1>
-            <!-- <span class="text-light"> Read on to find 'Interview Experiences' of all product and service-based companies</span> -->
+        <div class="form-title text-center" >
+            <h1 class="text-dark" style="color: white;"><%= user.company%> <%= user.inttype %> Experience</h1>
+            <!-- <span class=""> Read on to find 'Interview Experiences' of all product and service-based companies</span> -->
         </div>
 
 
         
         <div class="form-group">
-            <label for="name" class="text-light">Candidate Name</label>
+            <label for="name" class="text-dark">Candidate Name</label>
             <input type="hidden" name="id" value="<%= user._id %>">
             <!-- <input type="text" name="name" value="<%= user.name %>" placeholder=""> -->
             <p><%= user.name %></p>
         </div>
     
         <div class="form-group">
-            <label for="inttype" class="text-light">Interview type:</label>
+            <label for="inttype" class="">Interview type:</label>
             <!-- <input type="text" name="inttype" value="<%= user.inttype %>" placeholder=""> -->
             <p><%= user.inttype %></p>
         </div>
 
         <div class="form-group">
-            <label for="name" class="text-light">Company Name</label>
+            <label for="name" class="">Company Name</label>
             <!-- <input type="text" name="company" value="<%= user.company%>" placeholder=""> -->
             <p><%= user.company%></p>
         </div>
         <div class="form-group">
-            <label for="name" class="text-light">About Company</label>
+            <label for="name" class="">About Company</label>
             <!-- <input type="text" name="experience" value="<%= user.experience%>" placeholder=""> -->
             <p><%= user.experience%></p>
         </div>
 
         <div class="form-group">
-            <label for="requirements" class="text-light">Company Requirements:</label>
+            <label for="requirements" class="">Company Requirements:</label>
             <!-- <input type="text" name="requirements" value="<%= user.requirements%>" placeholder=""> -->
             <p><%= user.requirements%></p>
         </div>
         <div class="form-group">
-            <label for="name" class="text-light">Interview Process:(How many rounds the company conducted?)</label>
+            <label for="name" class="">Interview Process:(How many rounds the company conducted?)</label>
             <!-- <input type="text" name="process" value="<%= user.process%>" placeholder=""> -->
             <p><%= user.process%></p>
         </div>
         <div class="form-group">
-            <label for="name" class="text-light">Questions asked:</label>
+            <label for="name" class="">Questions asked:</label>
             <!-- <input type="text" name="questions" value="<%= user.questions%>" placeholder=""> -->
             <p ><%= user.questions%></p>
         </div>

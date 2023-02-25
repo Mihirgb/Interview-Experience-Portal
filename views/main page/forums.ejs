@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion Forum</title>
+    <link rel="stylesheet" href="/css/forumstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital@1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!--NavBar Section-->
+        <div class="navbar">
+            <nav class="navigation hide" id="navigation">
+                <span class="close-icon" id="close-icon" onclick="showIconBar()"><i class="fa fa-close"></i></span>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="/forums">Forums</a></li>
+                    <li class="nav-item"><a href="/posts">Posts</a></li>
+                    <li class="nav-item"><a href="/detail">Detail</a></li>
+                </ul>
+            </nav>
+            <a class="bar-icon" id="iconBar" onclick="hideIconBar()"><i class="fa fa-bars"></i></a>
+            <div class="brand">Discussion Forum</div>
+        </div>
+        <!--SearchBox Section-->
+        <div class="search-box">
+            <div>
+                <select name="" id="">
+                    <option value="Everything">Everything</option>
+                    <option value="Titles">Titles</option>
+                    <option value="Descriptions">Descriptions</option>
+                </select>
+                <input type="text" name="q" placeholder="search ...">
+                <button><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="subforum">
+            <div class="subforum-title">
+                <h1>Web Development</h1>
+            </div>
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa-star-half-full"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h4><a href="#">The size of the web pages is too big</a></h4>
+                    <p>We endorse interaction, websites with dynamic contents, beautiful images, etc. but always without losing sight of the function of each of these elements </p><br>
+                    <p>Cluttering up your website with images, animations or videos can hinder navigation and, above all, make the access to it time-consuming. And if the latter happens, you will have two problems: users will probably abandon your website if they can’t access it within 3 seconds and Google will penalise its positioning. Try to always optimise the images that you upload to your website and don’t add content without a purpose.</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>15 Posts | 2 Topics</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Last post</a></b> by <a href="">Waidehi Gautam</a> 
+                    <br>on <small>2 Dec 2022</small>
+                </div>
+            </div>
+        </div>
+        <!--More-->
+        
+        <div class="subforum">
+            <div class="subforum-title">
+                <h1>App Development</h1>
+            </div>
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa-star-half-full"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h4><a href="#">Inappropriate Button Size</a></h4>
+                    <p>This is the most annoying issue with how the app looks. If the Call-to-Action (CTA) buttons on the app are too small to perform the function correctly, it is going to frustrate the user. Tapping on something and getting redirected to something else is a total disappointment for anyone who is using the app to get some task accomplished.</p><br>
+                    <p>This is the most annoying issue with how the app looks. If the Call-to-Action (CTA) buttons on the app are too small to perform the function correctly, it is going to frustrate the user.</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>16 Posts | 5 Topics</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Last post</a></b> by <a href="">Mahesh Dase</a> 
+                    <br>on <small>12 Dec 2022</small>
+                </div>
+            </div>
+            <hr class="subforum-devider">
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa-star-half-full"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h4><a href="#">Typographical Hierarchy</a></h4>
+                    <p>Typographic hierarchy is a system for organizing typed text that establishes an order of importance within the data, allowing the reader to easily navigate through the content.</p><br>
+                    <p>If the hierarchy is not maintained within the design it becomes difficult for the user to find what he is looking for.</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>5 Posts | 2 Topics</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Last post</a></b> by <a href="">Vidya G.</a> 
+                    <br>on <small>23 Nov 2022</small>
+                </div>
+            </div>
+            <hr class="subforum-devider">
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa-star-half-full"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h4><a href="#">No Micro-Interactions</a></h4>
+                    <p>Micro-interactions are small design elements on the app or website that interact with the user. For example, when you hover over a button, it slightly vibrates or changes color, that is a micro-interaction. These tiny elements enhance the user experience tremendously. Not only do they encourage greater communication by simplifying the flow, but they also drive more action through it like liking, commenting and ordering through it. The absence of micro-interactions is like a missed opportunity for the developers in encashing their hard work.</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>34 Posts | 21 Topics</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Last post</a></b> by <a href="">Mihir G.</a> 
+                    <br>on <small>12 Nov 2020</small>
+                </div>
+            </div>
+            <hr class="subforum-devider">
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa-star-half-full"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h4><a href="#">Color Contrast</a></h4>
+                    <p>When the attention of the user has to be drawn to a particular segment, a high level of color contrast is used. This is generally for major CTA buttons. But if they are too many in number on a single screen, they will affect the user experience.</p><br>
+                    <p>For less important information or less often used buttons, low contrast should be used. This will avoid confusion and noise for the user.</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>24 Posts | 12 Topics</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Last post</a></b> by <a href="">Baldev Singh</a> 
+                    <br>on <small>10 Nov 2022</small>
+                </div>
+            </div>
+            <hr class="subforum-devider">
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa-star-half-full"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h4><a href="#">Neglated White Spaces</a></h4>
+                    <p>White spaces are to interfaces what trees are to cities. They improve the aesthetics but more importantly help the city breathe. White spaces are actually the spaces between two design elements and need not to have to be white. Having white spaces is important to organize the content on the website or app and balance out the design. In order to maintain a strong sense of the brand throughout the app, negative spaces go a long way as they hold readers’ attention. They should not be neglected.</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>20 Posts | 12 Topics</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Last post</a></b> by <a href="">Shraddha Singh</a> 
+                    <br>on <small>1 Nov 2022</small>
+                </div>
+            </div>
+        </div>
+        
+        <div class="subforum">
+            <div class="subforum-title">
+                <h1>Machine Learning</h1>
+            </div>
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa-star-half-full"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h4><a href="#">Lack of Quality Data</a></h4>
+                    <p>The number one problem facing Machine Learning is the lack of good data. While enhancing algorithms often consumes most of the time of developers in AI, data quality is essential for the algorithms to function as intended. Noisy data, dirty data, and incomplete data are the quintessential enemies of ideal Machine Learning. </p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>15 Posts | 10 Topics</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Last post</a></b> by <a href="">Anusha Todkar</a> 
+                    <br>on <small>7 Dec 2020</small>
+                </div>
+            </div>
+            <hr class="subforum-devider">
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa-star-half-full"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h4><a href="#">Data quality</a></h4>
+                    <p>Machine learning is more effective when the data has higher quality. Many enterprises rely on machine learning and artificial intelligence to simplify their work, including finding the best solution to workplace problems. Therefore, when using machine learning and its related programs, the data provided should be sufficient, clean and complete to produce more accurate results.</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>7 Posts | 2 Topics</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Last post</a></b> by <a href="">Nandani M.</a> 
+                    <br>on <small>5 Dec 2020</small>
+                </div>
+            </div>
+            <hr class="subforum-devider">
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa-star-half-full"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h4><a href="#">Data Imputation </a></h4>
+                    <p>Understand from known data i.e., fill in missing values with column mean, include from other nearby values, create an ML model to predict missing value; sort records and use previous data for the missing value.</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>24 Posts | 12 Topics</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Last post</a></b> by <a href="">Ver Mathew</a> 
+                    <br>on <small>12 Dec 2021</small>
+                </div>
+            </div>
+            <hr class="subforum-devider">
+            <div class="subforum-row">
+                <div class="subforum-icon subforum-column center">
+                    <i class="fa-star-half-full"></i>
+                </div>
+                <div class="subforum-description subforum-column">
+                    <h4><a href="#">Powerful Computing</a></h4>
+                    <p>A scalable, secure and powerful computing infrastructure allows data scientists to power through data preparation techniques and various models to reach the most ideal solution in the fastest time possible.</p>
+                </div>
+                <div class="subforum-stats subforum-column center">
+                    <span>14 Posts | 12 Topics</span>
+                </div>
+                <div class="subforum-info subforum-column">
+                    <b><a href="">Last post</a></b> by <a href="">John Smith</a> 
+                    <br>on <small>18 Mar 2021</small>
+                </div>
+            </div>
+
+           
+        </div>
+        <!---->
+    </div>
+
+    <!-- Forum Info -->
+    <div class="forum-info">
+        <!-- <div class="chart">
+            MyForum - Stats &nbsp;<i class="fa fa-bar-chart"></i>
+        </div> -->
+        <!-- <span><u>5,369</u> Posts in <u>48</u> Topics by <u>8,124</u> Members.</span><br> -->
+        <span>Latest post: <b><a href="">Web Development post</a></b> on Dec 2 2022 By <a href="">Waidehi Gautam</a></span>.<br>
+        <span>Check <a href="">the latest posts</a> .</span><br>
+    </div>
+
+    <!-- <footer>
+        <span>&copy;  Selmi Abderrahim | All Rights Reserved</span>
+    </footer> -->
+    <script src="/js/forum.js"></script>
+</body>
+</html>

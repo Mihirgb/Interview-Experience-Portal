@@ -20,8 +20,20 @@ exports.homeRoutes = (req, res) => {
             res.send(err);
         })
 }
+exports.resume = (req, res) => {
+    axios.get('http://localhost:3001')
+        .then(function(response){
+            res.render('newindex', { users :response.data });
+        })
+        .catch(err =>{
+            res.send(err);
+        })
+}
 exports.main = (req, res) =>{
     res.render('site');
+}
+exports.resources = (req, res) =>{
+    res.render('resources');
 }
 
 exports.add_user = (req, res) =>{
@@ -62,6 +74,30 @@ exports.username =(req,res)=>{
 }
 exports.password =(req,res)=>{
     res.render('password');
+}
+exports.google =(req,res)=>{
+    res.render('companies/google');
+}
+exports.amazon =(req,res)=>{
+    res.render('companies/amazon');
+}
+exports.wallmart =(req,res)=>{
+    res.render('companies/wallmart');
+}
+exports.microsoft =(req,res)=>{
+    res.render('companies/microsoft');
+}
+exports.rtips =(req,res)=>{
+    res.render('resumetips');
+}
+exports.forums =(req,res)=>{
+    res.render('main page/forums');
+}
+exports.posts =(req,res)=>{
+    res.render('main page/posts');
+}
+exports.detail =(req,res)=>{
+    res.render('main page/detail');
 }
 exports.update_user = (req, res) =>{
     axios.get('http://localhost:3000/api/users', { params : { id : req.query.id }})

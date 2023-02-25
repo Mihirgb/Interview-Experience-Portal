@@ -1,14 +1,13 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Barlow&family=PT+Sans&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Barlow&family=PT+Sans&display=swap');
 
 :root{
-    --dark: #2b2d42;
+    --dark: #22232b;
     --light: #adb5bd;
     --border: #dee2e6;
     --border-btn: #edf2f4;
 }
 body{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
+    font-family: 'Rubik', sans-serif;}
 * {
     padding: 0;
     margin: 0;
@@ -41,7 +40,9 @@ p{
 .justify-between{
     justify-content: space-between;
 }
-
+label{
+font-size: 1.1em;
+}
 .text-center{
     text-align: center;
 }
@@ -52,7 +53,7 @@ p{
 }
 
 .text-dark{
-    color: var(--dark);
+    color: #22232b;
 }
 
 .inline{
@@ -157,7 +158,9 @@ table{
     margin: auto;
 }
 
-#update_user .form-group,
+#update_user .form-group{
+    margin: 1.4em 0;
+}
 #add_user .form-group{
     margin: .4em 0;
 }

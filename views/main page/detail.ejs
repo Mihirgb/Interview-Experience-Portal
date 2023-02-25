@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forum</title>
+    <link rel="stylesheet" href="css/forumstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital@1&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <!--NavBar Section-->
+        <div class="navbar">
+            <nav class="navigation hide" id="navigation">
+                <span class="close-icon" id="close-icon" onclick="showIconBar()"><i class="fa fa-close"></i></span>
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="/forums">Forums</a></li>
+                    <li class="nav-item"><a href="/posts">Posts</a></li>
+                    <li class="nav-item"><a href="/detail">Detail</a></li>
+                </ul>
+            </nav>
+            <a class="bar-icon" id="iconBar" onclick="hideIconBar()"><i class="fa fa-bars"></i></a>
+            <div class="brand">Discussion Forum</div>
+        </div>
+        <!--SearchBox Section-->
+        <div class="search-box">
+            <div>
+                <select name="" id="">
+                    <option value="Everything">Everything</option>
+                    <option value="Titles">Titles</option>
+                    <option value="Descriptions">Descriptions</option>
+                </select>
+                <input type="text" name="q" placeholder="search ...">
+                <button><i class="fa fa-search"></i></button>
+            </div>
+        </div>
+    <div class="container">
+        <!--Navigation-->
+        <div class="navigate">
+            <span><a href="">Discussion Forum </a> >> <a href="">App Development Discussion</a> <a href=""></a></span>
+        </div>
+
+        <!--Topic Section-->
+        <div class="topic-container">
+            <!--Original thread-->
+            <div class="head">
+                <div class="authors">Author</div>
+                <div class="content">Topic: App Development</div>
+            </div>
+
+            <div class="body">
+                <div class="authors">
+                    <div class="username"><a href="">Mahesh Dase</a></div>
+                    <div>Problem Solver</div>
+                    <img src="" alt="">
+                    <div>Posts: <u>451</u></div>
+                    <div>Points: <u>458</u></div>
+                </div>
+                <div class="content">
+                    This is the most annoying issue with how the app looks. If the Call-to-Action (CTA) buttons on the app are too small to perform the function correctly, it is going to frustrate the user. <br><br>Tapping on something and getting redirected to something else is a total disappointment for anyone who is using the app to get some task accomplished.
+
+
+                    <br>
+                    <hr>
+                    Regards mahesh_17
+                    <br>
+                    <div class="comment">
+                        <button onclick="showComment()">Comment</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Comment Area-->
+        <div class="comment-area hide" id="comment-area">
+            <textarea name="comment" id="" placeholder="comment here ... "></textarea>
+            <input type="submit" value="submit">
+        </div>
+
+        <!--Comments Section-->
+        <div class="comments-container">
+            <div class="body">
+                <div class="authors">
+                    <div class="username"><a href="">Vidya G.</a></div>
+                    <div>Problem Solver</div>
+                    <img src="" alt="">
+                    <div>Posts: <u>5</u></div>
+                    <div>Points: <u>486</u></div>
+                </div>
+                <div class="content">
+                    Typographic hierarchy is a system for organizing typed text that establishes an order of importance within the data, allowing the reader to easily navigate through the content.<br>
+                    
+                    <hr>
+                    Regards vidya_7
+                    <br>
+                    <div class="comment">
+                        <button onclick="showReply()">Reply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Reply Area-->
+        <div class="comment-area hide" id="reply-area">
+            <textarea name="reply" id="" placeholder="reply here ... "></textarea>
+            <input type="submit" value="submit">
+        </div>
+
+
+        <!--Another Comment With replies-->
+        <div class="comments-container">
+            <div class="body">
+                <div class="authors">
+                    <div class="username"><a href="">Mihir G.</a></div>
+                    <div>Problem Solver</div>
+                    <img src="" alt="">
+                    <div>Posts: <u>65</u></div>
+                    <div>Points: <u>786</u></div>
+                </div>
+                <div class="content">
+                    Micro-interactions are small design elements on the app or website that interact with the user. For example, when you hover over a button, it slightly vibrates or changes color, that is a micro-interaction. These tiny elements enhance the user experience tremendously. 
+                    <hr>
+                    Regards mihir_29
+                    <br>
+                    <br>
+                    <br>
+                    <div class="comment">
+                        <button onclick="showReply()">Reply</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Reply Area-->
+        <div class="comment-area hide" id="reply-area">
+            <textarea name="reply" id="" placeholder="reply here ... "></textarea>
+            <input type="submit" value="submit">
+        </div>
+
+        
+
+    </div>
+    <!-- <footer>
+        <span>&copy;  Selmi Abderrahim | All Rights Reserved</span>
+    </footer> -->
+    <script src="js/forum.js"></script>
+</body>
+</html>
