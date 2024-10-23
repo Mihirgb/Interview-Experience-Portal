@@ -2,7 +2,7 @@ const { nextTick } = require('async');
 var Userdb = require('../model/model');
 const ApiFeatures = require('../utils/apifeatures');
 const ErrorHandler = require('../utils/errorhandler');
-
+var user =require('../model/user')
 exports.create = (req,res)=>{
     // validate request
     if(!req.body){

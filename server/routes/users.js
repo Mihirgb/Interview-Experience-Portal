@@ -3,12 +3,8 @@ var router = express.Router();
 var passport = require('passport');
 var bcrypt = require('bcryptjs');
 
-// Get Users model
 const Users = require('../model/user');
 
-/*
- * GET register
- */
 router.get('/register', function (req, res) {
 
     res.render('register', {
@@ -17,9 +13,6 @@ router.get('/register', function (req, res) {
 
 });
 
-/*
- * POST register
- */
 router.post('/register', function (req, res) {
 
     var name = req.body.name;

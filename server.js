@@ -2,20 +2,15 @@
  const dotenv=require(`dotenv`);
  const morgan=require(`morgan`);
  const bodyparser=require(`body-parser`); 
+ const bcrypt=require('bcrypt')
+ const User =require('./server/model/user')
  const path=require(`Path`);
  const session = require('express-session');
  var expressValidator = require('express-validator');
- 
  const connectDB = require('./server/database/connection');
  const app =express();
  dotenv.config({path:`config.env`})
  const PORT =process.env.PORT||8080
- const User = require('./server/model/user')
-const bcrypt = require('bcryptjs')
-const jwt = require('jsonwebtoken')
-const JWT_SECRET = 'sdjkfh8923yhjdksbfma@#*(&@*!^#&@bhjb2qiuhesdbhjdsfg839ujkdhfjk'
-const passport=require('passport');
-const { Passport } = require('passport');
 app.use(bodyparser.json())
 app.use(session({ secret: 'melody hensley is my spirit animal' }));
 app.use(expressValidator()); 
@@ -24,87 +19,86 @@ app.use(expressValidator());
  app.use(bodyparser.urlencoded({extended: true}))
  app.set("view engine","ejs")
  app.engine('html', require('ejs').renderFile);
-
  app.use('/css', express.static(path.resolve(__dirname, "assets/css")))
 app.use('/img', express.static(path.resolve(__dirname, "assets/img")))
 app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
-
-// app.post('/api/register', async (req, res) => {
-// 	const { name, username, password: plainTextPassword } = req.body
-
-// 	if (!username || typeof username !== 'string') {
-// 		return res.json({ status: 'error', error: 'Invalid username' })
-// 	}
-
-// 	if (!plainTextPassword || typeof plainTextPassword !== 'string') {
-// 		return res.json({ status: 'error', error: 'Invalid password' })
-// 	}
-
-// 	if (plainTextPassword.length < 5) {
-// 		return res.json({
-// 			status: 'error',
-// 			error: 'Password too small. Should be atleast 6 characters'
-// 		})
-// 	}
-
-// 	const password = await bcrypt.hash(plainTextPassword, 10)
-
-// 	try {
-// 		const response = await User.create({
-//             name,
-// 			username,
-// 			password
-// 		})
-// 		console.log('User created successfully: ', response)
-// 	} catch (error) {
-// 		if (error.code === 11000) {
-// 			// duplicate key
-// 			return res.json({ status: 'error', error: 'Username already in use' })
-// 		}
-// 		throw error
-// 	}
-
-// 	res.json({ status: 'ok' })
-// })
-// app.post('/api/login', async (req, res) => {
-// 	const { username, password } = req.body
-// 	const user = await User.findOne({ username }).lean()
-
-// 	if (!user) {
-// 		return res.json({ status: 'error', error: 'Invalid username/password' })
-// 	}
-
-// 	if (await bcrypt.compare(password, user.password)) {
-// 		// the username, password combination is successful
-
-// 		const token = jwt.sign(
-// 			{
-// 				id: user._id,
-// 				username: user.username
-// 			},
-// 			JWT_SECRET
-// 		)
-
-// 		return res.json({ status: 'ok', data: token })
-// 	}
-
-// 	res.json({ status: 'error', error: 'Invalid username/password' })
-// })
-
-//initializiig routes
-// const users=require('./server/routes/users')
-
-//passport config and middleware
-// require('./extras/passport')(passport);
-// app.use(passport.initialize());
-// app.use(passport.session());
-
-// app.get('*',function(req,res,next){
-// 	res.locals.user =req.user||null;
-// 	next();
-// })
 app.use('/',require('./server/routes/router'));
-// app.use('/users',users)
  app.listen(PORT,()=>{console.log(`Server is running onn http://localhost:${PORT}`)} );
 
 
+
+
+
+
+//loginsignup trial
+ app.get('/brandnewlogin', (req, res) => {
+    if (req.session.user) {
+      return res.redirect('/dashboard');
+    }
+    res.render('newlogin');
+  });
+
+  // GET: Signup Page
+app.get('/signup', (req, res) => {
+    res.render('signup');
+  });
+  
+  // POST: Signup Logic
+  app.post('/signup', async (req, res) => {
+    const { email, password, confirmPassword } = req.body;
+    if (password !== confirmPassword) {
+      return res.send('Passwords do not match!');
+    }
+    
+    // Hash the password
+    const hashedPassword = await bcrypt.hash(password, 10);
+  
+    // Create new user
+    const newUser = new User({
+      email,
+      password: hashedPassword,
+    });
+  
+    try {
+      await newUser.save();
+      // res.send({ status: "ok" });
+      res.redirect('/newlogin');
+    } catch (err) {
+      res.send('Error creating user: ' + err.message);
+    }
+  });
+  
+  // POST: Login Logic
+  app.post('/newlogin', async (req, res) => {
+    const { email, password } = req.body;
+  
+    // Check if user exists
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.send('User not found');
+    }
+  
+    // Compare passwords
+    const match = await bcrypt.compare(password, user.password);
+    if (!match) {
+      return res.send('Incorrect password');
+    }
+  
+    // Save session and redirect
+    req.session.user = user;
+    res.redirect('/dashboard');
+  });
+  
+  // GET: Dashboard (Protected Route)
+  app.get('/dashboard', (req, res) => {
+    if (!req.session.user) {
+      return res.redirect('/');
+    }
+    res.render('dashboard', { email: req.session.user.email });
+  });
+  
+  // GET: Logout
+  app.get('/logout', (req, res) => {
+    req.session.destroy();
+    res.redirect('/');
+  });

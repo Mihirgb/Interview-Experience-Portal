@@ -23,7 +23,8 @@ route.get('/rtips',services.rtips);
 route.get('/forums',services.forums);
 route.get('/detail',services.detail);
 route.get('/posts',services.posts);
-
+route.get('/newlogin',services.newlogin);
+route.get('/signup',services.signup);
 
 
 route.get('/resume',services.resume)

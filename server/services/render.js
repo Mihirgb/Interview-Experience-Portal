@@ -1,16 +1,4 @@
 const axios = require('axios');
-
-
-// exports.homeRoutes = (req, res) => {
-//     axios.get('http://localhost:3000/api/users')
-//         .then(function(response){
-//             res.render('index', { users :response.data });
-//         })
-//         .catch(err =>{
-//             res.send(err);
-//         })
-// }
-
 exports.homeRoutes = (req, res) => {
     axios.get('http://localhost:3000/api/users')
         .then(function(response){
@@ -90,6 +78,9 @@ exports.microsoft =(req,res)=>{
 exports.rtips =(req,res)=>{
     res.render('resumetips');
 }
+exports.newlogin =(req,res)=>{
+    res.render('newlogin');
+}
 exports.forums =(req,res)=>{
     res.render('main page/forums');
 }
@@ -109,4 +100,7 @@ exports.update_user = (req, res) =>{
         })
 
 
+}
+exports.signup=(req,res)=>{
+    res.render('signup');
 }

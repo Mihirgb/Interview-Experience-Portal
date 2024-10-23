@@ -11,6 +11,7 @@
     "react-feather": "^2.0.9",
     "react-scripts": "5.0.0",
     "react-to-print": "^2.14.4",
+    "resume-builder": "file:",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
